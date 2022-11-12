@@ -10,17 +10,15 @@ if calculation == 'n':
     print('Enter the loan principal:')
     principal = int(input())
     print('Enter the monthly payment:')
-    payment = int(input())
+    monthly_payment = int(input())
     print('Enter the loan interest:')
-    loan_interest_percentage = int(input())
-    i = loan_interest_percentage / 1200
+    loan_interest = int(input())
+    i = loan_interest / 1200
+
+    months = round(math.log(float(monthly_payment) / (float(monthly_payment) - i * float(principal)), i + 1))
     
-    x = (payment / payment - i * principal)
-    base = 1 + i
-    print(math.log(base, x))
+    years = months / 12
+
+    print(years)
     
-    '''for anyone whos struggling with the log function in example 1:
-    n = log 1 + i (A / A − i ∗ P)
-    math.log(x, base)
-    x = (A / A − i ∗ P)
-    base = 1 + i'''
+   
