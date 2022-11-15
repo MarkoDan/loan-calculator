@@ -4,11 +4,11 @@ import argparse
 def main():
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('--type', metavar='type', type=str, help='enter the type of calculator')
-    parser.add_argument('--principal', type=int)
-    parser.add_argument('--payment', type=int)
-    parser.add_argument('--interest', type=float)
-    parser.add_argument('--periods', type=int)
+    parser.add_argument('--type', metavar='type', type=str, help='Specify the type of calculator "diff" for differentiate or "annuity" for monthly payments.')
+    parser.add_argument('--principal', type=int, help='Specify the principal of the loan.')
+    parser.add_argument('--payment', type=int, help='Specify the monthly payment.')
+    parser.add_argument('--interest', type=float, help='Specify the Interest Rate of the loan.')
+    parser.add_argument('--periods', type=int, help='Specify the number of months of the loan payout.')
     args = parser.parse_args()
 
     calculator_type = args.type
